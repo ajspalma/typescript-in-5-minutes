@@ -1,23 +1,24 @@
 /**
- * Type annotations
- * used string type annotation 
- * to only accept string for 
- * person argument
- * 
- * @param person string 
+ * using Interfaces 
+ * with Type annotations
+ * to describe the objects 
+ * that have firstName and 
+ * lastName field
  */
-function greeter(person: string) {
-    // Initial commit must be like this only
-    return "Hello, " + person;
+interface Person {
+    firstName: string;
+    lastName: string;
 }
 
-// this wont work because `person` argument
-// only accepts String not array or any 
-// other types
-// let user = [0, 1, 2];
+function greeter(person: Person) {
+    return "Hello, " + person.firstName + " " + person.lastName;
+}
 
-// This will work
-let user = "Jane Doe";
+
+let user = {
+    firstName: "Jane",
+    lastName: "Doe"
+}
 
 document.body.textContent = greeter(user);
 
